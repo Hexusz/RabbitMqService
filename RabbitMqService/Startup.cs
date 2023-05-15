@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RabbitMqService.RabbitMq;
 
 namespace RabbitMqService
 {
@@ -26,6 +27,7 @@ namespace RabbitMqService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<IRabbitMqService, RabbitMq.RabbitMqService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
